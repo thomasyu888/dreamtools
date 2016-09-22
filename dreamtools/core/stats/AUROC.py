@@ -1,21 +1,9 @@
 import numpy as np
-import os
-import sys
 import pandas
-import pylab as pl
-
-import matplotlib.pyplot as plt
-%matplotlib inline
-
-import numpy as np
-import pylab as pl
-from sklearn import svm, datasets
-from sklearn.utils import shuffle
-from sklearn.metrics import roc_curve, auc, precision_recall_curve
+from sklearn.metrics import auc
 
 import warnings
 warnings.filterwarnings('ignore')
-
 def __get_blockWise_stats(sub_stats):
     
     #group to calculate group wise stats for each block
@@ -129,7 +117,7 @@ def __nonlinear_interpolated_evalStats(block_df, blockWise_stats):
     block_df['block'] = blockStats.block
     return(block_df)
 
-def getAUROC(truth, pred):
+def get_AUROC(truth, pred):
     precision, recall, fpr, threshold= get_precision_recall_fpr(truth, pred)
 
     AUROC = auc(fpr,recall,reorder=True)
