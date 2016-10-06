@@ -4,6 +4,7 @@ from sklearn.metrics import auc
 
 import warnings
 warnings.filterwarnings('ignore')
+
 def __get_blockWise_stats(sub_stats):
     
     #group to calculate group wise stats for each block
@@ -33,7 +34,7 @@ def __get_blockWise_stats(sub_stats):
     return(result)
 
 
-def get_precision_recall_fpr(truth, pred):
+def _get_precision_recall_fpr(truth, pred):
     
     sub_stats = pandas.DataFrame.from_dict({'predict':pred, 'truth':truth}, dtype='float64')
     sub_stats = sub_stats.sort_values(by=['predict'],ascending=False)
@@ -118,7 +119,15 @@ def __nonlinear_interpolated_evalStats(block_df, blockWise_stats):
     return(block_df)
 
 def get_AUROC(truth, pred):
-    precision, recall, fpr, threshold= get_precision_recall_fpr(truth, pred)
+    """
+    Obtain the nonlinear interpolated AUROC.  Make sure the values passed in are already matched
+    
+    :param truth: vector of truth values
+    :param pred:  vector of prediction values
+
+    :returns: AUROC
+    """
+    precision, recall, fpr, threshold= _get_precision_recall_fpr(truth, pred)
 
     AUROC = auc(fpr,recall,reorder=True)
     return(AUROC)

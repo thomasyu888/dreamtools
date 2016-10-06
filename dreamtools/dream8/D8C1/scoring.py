@@ -44,11 +44,11 @@ import pylab
 import numpy as np
 
 from dreamtools.core import rocs
-from dreamtools.dream8.D8C1 import cython_scoring
+#from dreamtools.dream8.D8C1 import cython_scoring
 from dreamtools.core.ziptools import ZIP
 from dreamtools.core.rocs import ROC
 from dreamtools.core.challenge import Challenge, LocalData
-from dreamtools.dream8.D8C1 import commons
+#from dreamtools.dream8.D8C1 import commons
 
 
 __all__ = ["HPNScoringNetwork", "HPNScoring", "HPNScoringNetworkInsilico",

@@ -101,7 +101,8 @@ setup(
         },
 
     install_requires = ['cython', 'numpy', 'matplotlib', 'pandas', 
-        'easydev>=0.9.11', 'fitter', 'synapseclient>=1.5', 'tabulate', 'scipy',
+        'easydev>=0.9.11', 'fitter', #'synapseclient>=1.5', 
+        'tabulate', 'scipy',
         'biokit','xlrd', 'numexpr', 'scikit-learn'],
 
     ext_modules = ext_modules,
