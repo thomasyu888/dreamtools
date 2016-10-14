@@ -1,1 +1,1 @@
-from .AUROC import get_AUROC
+from .AUC import get_AUROC
