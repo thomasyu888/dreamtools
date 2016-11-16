@@ -1,5 +1,7 @@
 import rpy2.robjects as robjects
-robjects.r("source('getAUC.R')")
+import os
+filePath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'getAUC.R')
+robjects.r("source('%s')" % filePath)
 
 ##Validate submissions
 AUC_pAUC = robjects.r('GetScores')
@@ -13,8 +15,8 @@ def get_AUROC(truth, pred):
 
     :returns: (AUC, partial AUC)
     """
-	pred = robjects.FloatVector([0.9,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.7])
-	truth = robjects.FloatVector([1,1,1,1,1,1,0,0,0,0,0,0,1])
-	results = AUC_pAUC(truth, pred)
+    pred = robjects.FloatVector(pred)
+    truth = robjects.FloatVector(truth)
+    results = AUC_pAUC(truth, pred)
     return(results[0], results[1])
 
