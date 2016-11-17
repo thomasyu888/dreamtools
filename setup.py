@@ -101,7 +101,7 @@ setup(
         },
 
     install_requires = ['cython', 'numpy', 'matplotlib', 'pandas', 
-        'easydev>=0.9.11', 'fitter', #'synapseclient>=1.5', 
+        'easydev>=0.9.11', 'fitter', 'synapseclient>=1.5', 
         'tabulate', 'scipy','rpy2',
         'biokit','xlrd', 'numexpr', 'scikit-learn'],
 
