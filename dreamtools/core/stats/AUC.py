@@ -18,5 +18,6 @@ def get_AUROC(truth, pred):
     pred = robjects.FloatVector(pred)
     truth = robjects.FloatVector(truth)
     results = AUC_pAUC(truth, pred)
-    return(results[0], results[1])
+
+    return(results[0][0], results[1][0])
 
