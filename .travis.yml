@@ -44,6 +44,7 @@ install:
   # coverage packages are elsewhere
   #- conda install --yes -c python-coveralls nose-cov
   - pip install nose easydev --upgrade
+  - pip install synapseclient
   - pip install coveralls -v
   - pip install biokit fitter -v 
   - pip install tabulate -v
